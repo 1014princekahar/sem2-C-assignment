@@ -1,0 +1,23 @@
+// write a program using pointers to read in an array of integers and print its elements in reverse order.
+#include <stdio.h>
+int main()
+{
+   int size, i, arr[100], *ptr;
+   printf("Enter Array Size : ");
+   scanf("%d", &size);
+
+   ptr = arr;
+   for (i = 0; i < size; i++)
+   {
+       printf("Enter %d Element : ", i + 1);
+       scanf("%d", ptr + i);
+   }
+
+   printf("\nReverse Order : \n");
+   for (i = size - 1; i >= 0; i--)
+   {
+       printf("%d\t", *(ptr + i));
+   }
+   printf("\n");
+   return 0;
+}

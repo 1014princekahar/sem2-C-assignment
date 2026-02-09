@@ -32,6 +32,22 @@ int leap_year(int year)
     return 0;
 }
 
+int check_date(struct date d)
+{
+    int days[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    if (d.year < 1 || d.month < 1 || d.month > 12 || d.day < 1 || d.day > 31)
+        return 0;
+
+    if (leap_year(d.year))
+        days[2] = 29;
+
+    if (d.day > days[d.month])
+        return 0;
+
+    return 1;
+}
+
 int update_date(struct date *d)
 {
     int days[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};

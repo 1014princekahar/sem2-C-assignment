@@ -14,7 +14,6 @@ struct date
     int month;
     int year;
 };
-
 void input_date(struct date *d)
 {
     printf("Enter Day (1-31): ");

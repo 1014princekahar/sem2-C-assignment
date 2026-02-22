@@ -2,7 +2,7 @@
 We know that the roots of a quadratic equation of the form
     ax^2 + bx + c = 0
 are given by the following equations :
-    x1 = -b + squrae root(b2 - 4ac) / 2a
+    x1 = -b + square root(b2 - 4ac) / 2a
     x2 = -b - square root(b2 - 4ac) / 2a
 Write a function to calculate the roots. The function must use two pointer parameters, one to receive the coefficients a, b, and c, and the other to send the roots to the calling function.
 */

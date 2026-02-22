@@ -1,4 +1,4 @@
-// Write a C program that displays the addresses and values pointed by an array of pointers.
+// Write a C program that displays the addresses and values pointed by an array of pointers. 
 
 #include <stdio.h>
 

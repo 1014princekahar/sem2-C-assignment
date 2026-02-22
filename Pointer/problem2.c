@@ -1,4 +1,5 @@
-/*We know that the roots of a quadratic equation of the form
+/*
+We know that the roots of a quadratic equation of the form
     ax^2 + bx + c = 0
 are given by the following equations :
     x1 = -b + squrae root(b2 - 4ac) / 2a

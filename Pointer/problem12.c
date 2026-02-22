@@ -1,4 +1,4 @@
-// write a C progrm that uses the pointer increment operations to demonstrate the scale factor
+// Write a C program that uses the pointer increment operations to demonstrate the scale factor
 
 #include <stdio.h>
 

@@ -1,4 +1,5 @@
-/* Design a function locate ( ) that takes two character arrays s1 and s2 and one integer value m as parameters and inserts the string s2 into s1 immediately after the index m . 
+/* 
+Design a function locate ( ) that takes two character arrays s1 and s2 and one integer value m as parameters and inserts the string s2 into s1 immediately after the index m . 
 Write a program to test the function using a real-life situation. 
 (Hint: s2 may be a missing word in s1 that represents a line of text).
 */

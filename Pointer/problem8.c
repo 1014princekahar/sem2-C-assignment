@@ -1,6 +1,5 @@
 /* 
-Given an array of sorted list of integer numbers, 
-Write a function to search for a particular item, using the method of binary search. 
+Given an array of sorted list of integer numbers, Write a function to search for a particular item, using the method of binary search. 
 And also show how this function may be used in a program. 
 use pointers and pointer arithmetic.
 */

@@ -1,5 +1,5 @@
 /*
-Write a function day_name that received a number n and returns a pointer to a character string containing the name of corresponding day. 
+Write a function day_name that receives a number n and returns a pointer to a character string containing the name of corresponding day. 
 The day name should be kept in a static table of character strings local to the function.
 */
 

@@ -1,21 +1,21 @@
 /*
 Develop a modular interactive program using functions that reads the values of three sides of a triangle and displays either its area or its perimeter as per the request of the user. Given the three sides a, b and c.
         Perimeter = a + b + c
-		    Area = sqrt ((s-a)*(s-b)*(s-c))
-	Where       s = (a+b+c)/2
+            Area = sqrt ((s-a)*(s-b)*(s-c))
+    Where       s = (a+b+c)/2
 */
 
 #include <stdio.h>
 #include <math.h>
 
-void read_sides(float a, float b, float c)
+void read_sides(float *a, float *b, float *c)
 {
     printf("Enter first side: ");
-    scanf("%f", &a);
+    scanf("%f", a);
     printf("Enter second side: ");
-    scanf("%f", &b);
+    scanf("%f", b);
     printf("Enter third side: ");
-    scanf("%f", &c);
+    scanf("%f", c);
 }
 
 float perimeter(float a, float b, float c)
@@ -26,7 +26,7 @@ float perimeter(float a, float b, float c)
 float area(float a, float b, float c)
 {
     float s = (a + b + c) / 2;
-    return sqrt((s - a) * (s - b) * (s - c));
+    return sqrt(s * (s - a) * (s - b) * (s - c));
 }
 
 int main()
@@ -34,7 +34,7 @@ int main()
     float a, b, c;
     char operation;
 
-    read_sides(a,b,c);
+    read_sides(&a, &b, &c);
 
     printf("Enter one of the followings: ");
     printf("\n\tA. Perimeter of the triangle ");
@@ -44,14 +44,14 @@ int main()
     scanf(" %c", &operation);
     switch (operation)
     {
-        case 'A':
-            printf("Result -> %f\n", perimeter(a, b, c));
-            break;
-        case 'B':
-            printf("Result -> %f\n", area(a, b, c));
-            break;
-        default:
-            printf("Invalid operation\n");
+    case 'A':
+        printf("Result -> %.2f\n", perimeter(a, b, c));
+        break;
+    case 'B':
+        printf("Result -> %.2f\n", area(a, b, c));
+        break;
+    default:
+        printf("Invalid operation\n");
     }
     return 0;
 }

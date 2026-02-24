@@ -1,5 +1,6 @@
 /*
-Define a structure data type named data contining three integer memebers day. month, and year. Develop an interactive modular program to perform the following tasks:
+Define a structure data type named data contining three integer memebers day. month, and year. 
+Develop an interactive modular program to perform the following tasks:
     A. To read data into structure members by a function
     B. To validate the data entered by another function
     C. TO print the data in the format
@@ -21,7 +22,7 @@ struct date
     int day;
     int month;
     int year;
-};
+}d;
 
 void input_date(struct date *d)
 {
@@ -60,21 +61,21 @@ void print_date(struct date d)
 {
     char month_names[13][15] = {"", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 
-    printf("Final Formatted Date: %s %d, %d\n", month_names[d.month], d.day, d.year);
+    printf("Formatted Date: %s %d, %d\n", month_names[d.month], d.day, d.year);
 }
 
 int main()
 {
-    struct date d;
     int validation = 0;
     input_date(&d);
 
     if (check_date(d))
     {
-        printf("\nSuccess! Valid Date.\n");
+        printf("\nSuccess! The date entered is a valid date.\n");
         print_date(d);
     }
     else
-        printf("\nError! The date entered is invalid.\n");
+        printf("\nError! The date entered is a invalid date.\n");
+
     return 0;
 }

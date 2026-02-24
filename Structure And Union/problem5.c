@@ -13,7 +13,7 @@ struct date
     int day;
     int month;
     int year;
-};
+}d;
 
 void input_date(struct date *d)
 {
@@ -56,7 +56,6 @@ int update_date(struct date *d)
         days[2] = 29;
 
     d->day++;
-
     if (d->day > days[d->month])
     {
         d->day = 1;
@@ -68,7 +67,6 @@ int update_date(struct date *d)
             d->year++;
         }
     }
-
     return 1;
 }
 
@@ -81,8 +79,6 @@ void print_date(struct date d)
 
 int main()
 {
-    struct date d;
-
     input_date(&d);
 
     if (!check_date(d))
@@ -92,7 +88,6 @@ int main()
     }
 
     update_date(&d);
-
     printf("Updated Data ( +1 day) : ");
     print_date(d);
 

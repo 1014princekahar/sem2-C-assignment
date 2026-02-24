@@ -6,7 +6,6 @@ Design a function update that accepts the data structure designed in Problem 4 t
 */
 
 #include <stdio.h>
-#include <string.h>
 
 struct date
 {
@@ -83,12 +82,12 @@ int main()
 
     if (!check_date(d))
     {
-        printf("Invalid date entered\n");
+        printf("Error! Invalid Date Entered\n");
         return 0;
     }
 
     update_date(&d);
-    printf("Updated Data ( +1 day) : ");
+    printf("Updated Date ( +1 day) : ");
     print_date(d);
 
     return 0;

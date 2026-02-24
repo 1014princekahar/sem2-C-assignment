@@ -8,7 +8,7 @@ Hint : if the incremenet results in 60 seconds, then the second memeber is set t
 struct time_struct
 {
     int hour, minute, second;
-} ts;
+}ts;
 
 void input_time(struct time_struct *ts)
 {

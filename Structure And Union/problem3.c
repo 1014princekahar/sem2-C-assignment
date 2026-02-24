@@ -1,4 +1,5 @@
-/*Design a function update that would accept the data structure designed in problem 1 and increments time by one second and returns the new time .
+/*
+Design a function update that would accept the data structure designed in problem 1 and increments time by one second and returns the new time .
 Hint : if the incremenet results in 60 seconds, then the second memeber is set to zero and the minute memeber is incremented by one. Then, if the reult is 60 minutes, the minute memeber is set to zero and the hour memeber is incremented by one. Finally when the hour becomes 24, it is set to zero.
 */
 

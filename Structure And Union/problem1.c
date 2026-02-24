@@ -9,11 +9,14 @@ Develop a program that would assign values to the individual members and display
 struct time_struct
 {
     int hour, minute, second;
-};
+}ts;
 
 int main()
 {
-    struct time_struct ts = {16, 40, 51};
+    ts.hour = 16;
+    ts.minute = 40;
+    ts.second = 51;
+    
     printf("%02d : %02d : %02d \n", ts.hour, ts.minute, ts.second);
     return 0;
 }

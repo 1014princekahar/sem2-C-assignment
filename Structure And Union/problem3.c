@@ -42,8 +42,8 @@ int update(struct time_struct *ts)
 int main()
 {
     input_time(&ts);
-    printf("Before Updation : \n%d : %d : %d \n", ts.hour, ts.minute, ts.second);
+    
     update(&ts);
-    printf("After Updation (+1s): \n%d : %d : %d \n", ts.hour, ts.minute, ts.second);
+    printf("Update Time (+1s): \n%d : %d : %d \n", ts.hour, ts.minute, ts.second);
     return 0;
 }

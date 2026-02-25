@@ -1,5 +1,5 @@
 /*
-define a structure to represent a vector ( a series of integer values ) and wirte a modular program to perform the following tasks:
+Define a structure to represent a vector ( a series of integer values ) and write a modular program to perform the following tasks:
     A. To create a vector
     B. To modify the value of a given element
     C. To multiply by a scalar value
@@ -13,7 +13,7 @@ struct vector
 {
     int arr[100];
     int size;
-};
+}v;
 
 void create_vector(struct vector *v)
 {
@@ -52,12 +52,11 @@ void display_vector(struct vector v)
 
 int main()
 {
-    struct vector v;
     int index, value, scalar;
 
     create_vector(&v);
 
-    printf("Enter index to modify: ");
+    printf("Enter index to modify ( index start from 0 ): ");
     scanf("%d", &index);
 
     printf("Enter new value: ");

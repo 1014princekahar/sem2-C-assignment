@@ -26,13 +26,13 @@ struct British
 
 void add_into_metric(struct metric m, struct British b)
 {
-    int total_cm;
+    float total_cm;
 
     total_cm = (m.metre * 100) + m.centimetre;
     total_cm += (b.feet * 30.48) + (b.inch * 2.54);
 
     m.metre = total_cm / 100;
-    m.centimetre = total_cm % 100;
+    m.centimetre = (int)total_cm % 100;
 
     printf("Result in Metric System:\n");
     printf("%d metres %d centimetres\n", m.metre, m.centimetre);

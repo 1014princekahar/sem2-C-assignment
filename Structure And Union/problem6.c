@@ -53,7 +53,7 @@ int main()
 {
     while (1)
     {
-        input_date(&d);
+        read_date(&d);
 
         if (!check_date(d))
         {

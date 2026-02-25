@@ -12,8 +12,13 @@ struct date
 
 void read_date(struct date *d)
 {
+    long int date;
     printf("Enter date in YYYYMMDD format: ");
-    scanf("%4d%2d%2d", &d->year, &d->month, &d->day);
+    scanf("%ld", &date);
+
+    d->year = date / 10000;
+    d->month = (date % 10000) / 100;
+    d->day = date % 100;
 }
 
 int leap_year(int year)
@@ -46,8 +51,20 @@ void print_date(struct date d)
 
 int main()
 {
-    read_date(&d);
-    check_date(d);
-    print_date(d);
+    while (1)
+    {
+        input_date(&d);
+
+        if (!check_date(d))
+        {
+            printf("\nError! Invalid Date Entered\n");
+            continue;
+        }
+        else
+        {
+            print_date(d);
+            break;
+        }
+    }
     return 0;
 }

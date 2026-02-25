@@ -4,14 +4,14 @@ Use suitable algorithm to convert the long integer 19450815 into year, month and
 */
 
 #include <stdio.h>
-struct date 
+
+struct date
 {
     int day, month, year;
-};
+} d;
+
 void read_date(struct date *d)
 {
-    int n;
-
     printf("Enter date in YYYYMMDD format: ");
     scanf("%4d%2d%2d", &d->year, &d->month, &d->day);
 }
@@ -20,8 +20,7 @@ int leap_year(int year)
 {
     if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
         return 1;
-    else
-        return 0;
+    return 0;
 }
 
 int check_date(struct date d)
@@ -44,9 +43,9 @@ void print_date(struct date d)
 {
     printf("\nYear = %04d \nMonth = %02d \nDay = %02d\n", d.year, d.month, d.day);
 }
+
 int main()
 {
-    struct date d;
     read_date(&d);
     check_date(d);
     print_date(d);

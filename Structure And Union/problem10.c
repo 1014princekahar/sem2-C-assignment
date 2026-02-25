@@ -8,16 +8,15 @@ struct vector
 {
     int arr[100];
     int size;
-} v1, v2, ans;
+} v1, v2, add;
 
-void create_vector(struct vector *v)
+void create_vector(struct vector *v, int size)
 {
-    printf("Enter size of vector: ");
-    scanf("%d", &v->size);
-
-    printf("Enter %d elements:\n", v->size);
-    for (int i = 0; i < v->size; i++)
+    for (int i = 0; i < size; i++)
+    {
+        printf("Enter %d Element : ", i + 1);
         scanf("%d", &v->arr[i]);
+    }
 }
 
 int addition_of_vectors(struct vector *v1, struct vector *v2, struct vector *addition)
@@ -28,9 +27,7 @@ int addition_of_vectors(struct vector *v1, struct vector *v2, struct vector *add
     addition->size = v1->size;
 
     for (int i = 0; i < v1->size; i++)
-    {
         addition->arr[i] = v1->arr[i] + v2->arr[i];
-    }
     return 1;
 }
 
@@ -48,18 +45,30 @@ void display_vector(struct vector v)
 
 int main()
 {
-    printf("Enter First Vector : \n");
-    create_vector(&v1);
+    printf("Enter First Vector Size: ");
+    scanf("%d", &v1.size);
 
-    printf("Enter Second Vector : \n");
-    create_vector(&v2);
+    printf("Enter Second Vector Size: ");
+    scanf("%d", &v2.size);
 
-    if (addition_of_vectors(&v1, &v2, &ans))
+    if (v1.size != v2.size)
     {
-        printf("Resultant vector after addition:\n");
-        display_vector(ans);
+        printf("\nVector addition not possible. Sizes are different.\n");
+        return 0;
     }
-    else
-        printf("Vector addition not possible. Sizes are different.\n");
+    printf("\nEnter First Vector : \n");
+    create_vector(&v1, v1.size);
+
+    printf("\nEnter Second Vector : \n");
+    create_vector(&v2, v2.size);
+
+    addition_of_vectors(&v1, &v2, &add);
+    printf("Addition of Vectors:\n   ");
+    display_vector(v1);
+    printf(" + ");
+    display_vector(v2);
+    printf("--------------------\n");
+    printf(" = ");
+    display_vector(add);
     return 0;
 }

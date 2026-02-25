@@ -12,31 +12,24 @@ struct date
     int day;
     int month;
     int year;
-};
+} d1, d2;
 
 int leap_year(int year)
 {
     if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
         return 1;
-    else
-        return 0;
+    return 0;
 }
 
 int update_date(struct date d)
 {
     int days_in_month[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-    if (d.year < 1)
-        return 0;
-
-    if (d.month < 1 || d.month > 12)
+    if (d.year < 1 || d.day < 1 || d.day > days_in_month[d.month] || d.month < 1 || d.month > 12)
         return 0;
 
     if (d.month == 2 && leap_year(d.year))
         days_in_month[2] = 29;
-
-    if (d.day < 1 || d.day > days_in_month[d.month])
-        return 0;
 
     return 1;
 }
@@ -61,34 +54,32 @@ int compare(struct date d1, struct date d2)
 
 int main()
 {
-    struct date date1, date2;
-
     printf("Enter First Date ( in given format ) ( MM / DD / YYYY): ");
-    if (scanf("%d / %d / %d", &date1.day, &date1.month, &date1.year) != 3)
+    if (scanf("%d / %d / %d", &d1.day, &d1.month, &d1.year) != 3)
     {
         printf("Error! Invalid date format ( Enter in MM / DD / YYYY format ) \n");
         return 0;
-    } // check fromat 
+    } // check fromat
 
-    if (!update_date(date1)) // check leap year
+    if (!update_date(d1)) // check leap year
     {
         printf("Error! Invalid date entered.\n");
         return 0;
     }
 
     printf("Enter Second Date ( in given format ) ( MM / DD / YYYY): ");
-    if (scanf("%d / %d / %d", &date2.day, &date2.month, &date2.year) != 3)
+    if (scanf("%d / %d / %d", &d2.day, &d2.month, &d2.year) != 3)
     {
         printf("Error! Invalid date format ( Enter in MM / DD / YYYY format ) \n");
         return 0;
-    } // check fromat 
+    } // check fromat
 
-    if (!update_date(date2)) // check leap year
+    if (!update_date(d2)) // check leap year
     {
         printf("Error! Invalid date entered.\n");
         return 0;
     }
 
-    compare(date1, date2) == 1 ? printf("Date1 is earlier than Date2\n") : printf("Date1 is later than Date2\n");
+    compare(d1, d2) == 1 ? printf("Date1 is earlier than Date2\n") : printf("Date1 is later than Date2\n");
     return 0;
 }

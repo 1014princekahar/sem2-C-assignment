@@ -12,7 +12,7 @@ struct date
     int day;
     int month;
     int year;
-}d;
+} d;
 
 void input_date(struct date *d)
 {
@@ -78,14 +78,22 @@ void print_date(struct date d)
 
 int main()
 {
-    input_date(&d);
-
-    if (!check_date(d))
+    while (1)
     {
-        printf("Error! Invalid Date Entered\n");
-        return 0;
-    }
+        input_date(&d);
 
+        if (!check_date(d))
+        {
+            printf("\nError! Invalid Date Entered\n");
+            continue;
+        }
+        else
+        {
+            printf("\nSuccess! Valid Date Entered\n");
+            break;
+        }
+    }
+    
     update_date(&d);
     printf("Updated Date ( +1 day) : ");
     print_date(d);

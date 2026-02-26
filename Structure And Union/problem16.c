@@ -9,11 +9,10 @@ struct student
     char name[50];
     int roll_no;
     float marks;
-};
+}s;
 
 int main()
 {
-    struct student s;
     printf("The size of the student is %lu bytes\n",sizeof(s));
     return 0;
 }

@@ -14,18 +14,17 @@ Write a program to do the following:
 
 #include <stdio.h>
 #include <string.h>
-#define N 5 // define macro
 
 struct census
 {
     char city[30];
     long int population;
     float literacy;
-} city[N];
+} city[5];
 
 void input_data(struct census c[])
 {
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < 5; i++)
     {
         printf("\nEnter details of city %d\n", i + 1);
         printf("City name: ");
@@ -40,59 +39,46 @@ void input_data(struct census c[])
 void sort_by_name(struct census c[])
 {
     struct census temp;
-    for (int i = 0; i < N - 1; i++)
-    {
-        for (int j = i + 1; j < N; j++)
-        {
+    for (int i = 0; i < 5 - 1; i++)
+        for (int j = i + 1; j < 5; j++)
             if (strcmp(c[i].city, c[j].city) > 0)
             {
                 temp = c[i];
                 c[i] = c[j];
                 c[j] = temp;
             }
-        }
-    }
 }
 
 void sort_by_literacy(struct census c[])
 {
     struct census temp;
-    for (int i = 0; i < N - 1; i++)
-    {
-        for (int j = i + 1; j < N; j++)
-        {
+    for (int i = 0; i < 5 - 1; i++)
+        for (int j = i + 1; j < 5; j++)
             if (c[i].literacy > c[j].literacy)
             {
                 temp = c[i];
                 c[i] = c[j];
                 c[j] = temp;
             }
-        }
-    }
 }
 
 void sort_by_population(struct census c[])
 {
     struct census temp;
-    for (int i = 0; i < N - 1; i++)
-    {
-        for (int j = i + 1; j < N; j++)
-        {
+    for (int i = 0; i < 5 - 1; i++)
+        for (int j = i + 1; j < 5; j++)
             if (c[i].population > c[j].population)
             {
                 temp = c[i];
                 c[i] = c[j];
                 c[j] = temp;
             }
-        }
-    }
 }
 
 void display(struct census c[])
 {
-    int i;
     printf("\n%-15s %-15s %-15s\n", "City", "Population", "Literacy");
-    for (i = 0; i < N; i++)
+    for (int i = 0; i < 5; i++)
         printf("%-15s %-15ld %-15.2f\n", c[i].city, c[i].population, c[i].literacy);
 }
 

@@ -7,7 +7,7 @@ Write a program to test the function using a real-life situation.
 #include <stdio.h>
 #include <string.h>
 
-void locate(char s1[], char s2[], int m)
+char* locate(char s1[], char s2[], int m)
 {
     char temp[200];
     int i, j = 0;
@@ -23,26 +23,24 @@ void locate(char s1[], char s2[], int m)
 
     temp[j] = '\0';
     strcpy(s1, temp); // copy modified string back to s1
+
+    return s1;
 }
 
 int main()
 {
-    char s1[200];
-    char s2[100];
+    char str1[200], str2[100];
     int m;
 
-    printf("Enter the first string (s1): ");
-    fgets(s1, sizeof(s1), stdin);
-    s1[strcspn(s1, "\n")] = '\0'; // Remove newline character
+    printf("Enter the first string (str1): ");
+    scanf("%[^\n]s", str1);
+    printf("Enter the second string (str2): ");
+    scanf(" %[^\n]s", str2);
     
-    printf("Enter the second string (s2): ");
-    fgets(s2, sizeof(s2), stdin);
-    s2[strcspn(s2, "\n")] = '\0'; // Remove newline character
-    
-    printf("Enter the index (m) after which to insert s2 into s1: ");
+    printf("Enter the index (m) after which to insert str2 into str1: ");
     scanf("%d", &m);
     
-    locate(s1, s2, m);
-    printf("The modified string is: %s\n", s1);
+    locate(str1, str2, m);
+    printf("The modified string is: %s\n", str1);
     return 0;
 }

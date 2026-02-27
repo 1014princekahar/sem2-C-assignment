@@ -13,10 +13,13 @@ void space(int x)
 
 int main()
 {
-    int spaces, num1 = 5, num2 = 10;
+    int spaces, num1, num2;
+    printf("Enter the first number : ");
+    scanf("%d", &num1);
+    printf("Enter the second number : ");
+    scanf("%d", &num2);
     printf("How many spaces you have include between two numbers : ");
     scanf("%d", &spaces);
-    printf("Num 1 is %d Num 2 is %d \n", num1 , num2 );
     printf("%d", num1);
     space(spaces);
     printf("%d\n", num2);

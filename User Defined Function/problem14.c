@@ -11,9 +11,8 @@ Use functions for carrying out each of the above tasks. The main function should
 
 void input_array(int array[], int size)
 {
-    int i;
     printf("\nEnter Unsorted Element : \n");
-    for (i = 0; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
         printf("Enter Element %d: ", i + 1);
         scanf("%d", &array[i]);
@@ -23,18 +22,15 @@ void input_array(int array[], int size)
 
 void sort_array(int array[], int size)
 {
-    int i, j;
-    for (i = 0; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
         int min = array[i], min_index = i;
-        for (j = i + 1; j < size; j++)
-        {
+        for (int j = i + 1; j < size; j++)
             if (array[j] < min)
             {
                 min = array[j];
                 min_index = j;
             }
-        }
         int temp = array[i];
         array[i] = array[min_index];
         array[min_index] = temp;
@@ -52,9 +48,8 @@ void merge_arrays(int array1[], int array2[], int result[], int m, int n)
 
 void print_array(int array[], int size)
 {
-    int i;
     printf("Array: \n");
-    for (i = 0; i < size; i++)
+    for (int i = 0; i < size; i++)
         printf("%d ", array[i]);
     printf("\n");
 }
@@ -69,7 +64,7 @@ void operations()
 
     printf("Input for array 1:\n");
     input_array(array1, m);
-    
+
     printf("Input for array 2:\n");
     input_array(array2, n);
 
@@ -78,7 +73,7 @@ void operations()
 
     int result[m + n];
     merge_arrays(array1, array2, result, m, n);
-    sort_array(result, m+n);
+    sort_array(result, m + n);
 
     print_array(result, m + n);
 }

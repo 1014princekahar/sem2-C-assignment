@@ -1,12 +1,12 @@
 // Write a function that will scan a character string passed as an argument and convert all lowercase characters into their uppercase equivalents.
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 
 void convert_to_uppercase(char *str)
 {
-    int i;
-    for (i = 0; str[i] != '\0'; i++)
+    for (int i = 0; str[i] != '\0'; i++)
         str[i] = toupper(str[i]);
 }
 

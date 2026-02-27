@@ -37,6 +37,6 @@ int main()
     printf("\n");
     printf("The first 15 Fibonacci numbers are: ");
     fibonacci(15);
-
+    printf("\n");
     return 0;
 }

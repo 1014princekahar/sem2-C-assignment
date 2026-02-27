@@ -8,9 +8,7 @@ void average_of_row_and_col(int m, int n, int matrix[][n], float row_averages[],
     {
         row_averages[i] = 0;
         for (int j = 0; j < n; j++)
-        {
             row_averages[i] += matrix[i][j];
-        }
         row_averages[i] /= n;
     }
 
@@ -18,9 +16,7 @@ void average_of_row_and_col(int m, int n, int matrix[][n], float row_averages[],
     {
         column_averages[j] = 0;
         for (int i = 0; i < m; i++)
-        {
             column_averages[j] += matrix[i][j];
-        }
         column_averages[j] /= m;
     }
 }
@@ -31,23 +27,17 @@ void display(int m, int n, int matrix[][n], float row_averages[], float column_a
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++)
-        {
             printf("%d  ", matrix[i][j]);
-        }
         printf("\n");
     }
 
     printf("\nRow Average : ");
     for (int i = 0; i < m; i++)
-    {
         printf("%.2f  ", row_averages[i]);
-    }
 
     printf("\nColumn Averages : ");
     for (int j = 0; j < n; j++)
-    {
         printf("%.2f  ", column_averages[j]);
-    }
     printf("\n");
 }
 
@@ -64,16 +54,13 @@ int main()
 
     printf("\nEnter the elements of the matrix:\n");
     for (int i = 0; i < m; i++)
-    {
         for (int j = 0; j < n; j++)
         {
             printf("Enter Element [%d][%d]: ", i, j);
             scanf("%d", &matrix[i][j]);
         }
-    }
 
     average_of_row_and_col(m, n, matrix, row_averages, column_averages);
-
     display(m, n, matrix, row_averages, column_averages);
 
     return 0;

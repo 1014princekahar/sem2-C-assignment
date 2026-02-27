@@ -18,7 +18,7 @@ int main()
 {
     char str[100], find_character;
 
-    printf("Enter a character array: ");
+    printf("Enter a String: ");
     scanf("%[^\n]s", str);
 
     printf("Enter a character to search for: ");

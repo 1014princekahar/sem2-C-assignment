@@ -2,19 +2,15 @@
 
 #include <stdio.h>
 
-/* Structure definition */
 struct student
 {
     int roll_no;
     float marks;
-};
+}s,*ptr;
 
 int main()
 {
-    struct student s, *ptr;
-
     ptr = &s;
-
     ptr->roll_no = 101;
     ptr->marks = 88.50;
 

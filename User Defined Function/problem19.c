@@ -17,7 +17,6 @@ void leap(int year)
 int main()
 {
     int year;
-
     printf("Enter a year: ");
     if (scanf("%d", &year) != 1)
     {
@@ -26,6 +25,5 @@ int main()
     }
     
     leap(year);
-
     return 0;
 }

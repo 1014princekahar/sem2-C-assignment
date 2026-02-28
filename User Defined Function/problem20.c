@@ -5,25 +5,22 @@ For example, the value 123.4567 will be rounded to 123.46
 */
 
 #include <stdio.h>
-#include <math.h>
 
-double round_two_decimals(double x)
+void rounded(float x)
 {
-    return round(x * 100.0) / 100.0;
+    printf("Rounded value: %.2f\n", x);
 }
 
 int main(void)
 {
-    double x;
-
+    float x;
     printf("Enter a floating point value: ");
-    if (scanf("%lf", &x) != 1)
+    if (scanf("%f", &x) != 1)
     {
         printf("Invalid input.\n");
         return 1;
     }
 
-    printf("Rounded value: %.2f\n", round_two_decimals(x));
-
+    rounded(x);
     return 0;
 }

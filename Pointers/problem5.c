@@ -24,13 +24,13 @@ int main()
 {
     char str[100], removeableChar;
     printf("Enter Your String: ");
-    fgets(str, sizeof(str), stdin);
+    scanf("%[^\n]s", str);
 
     printf("Which Character You Have to Remove form the String : ");
     scanf(" %c", &removeableChar);
     
     remove_char(str, removeableChar);
     
-    printf("%s", str);
+    printf("%s\n", str);
     return 0;
 }

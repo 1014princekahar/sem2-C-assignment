@@ -3,49 +3,41 @@
 #include <stdio.h>
 #include <string.h>
 
-void insertSubString(char *mainStr, char *ptrSubstr, int position)
+void insertSubString(char *main_str, char *ptr_sub_str, int position)
 {
     char temp[200];
-    char *ptrMainStr = mainStr;
-    char *ptrTemp = temp;
+    char *ptr_main_str = main_str;
+    char *ptr_temp = temp;
 
     for (int i = 0; i < position; i++)
-        *ptrTemp++ = *ptrMainStr++; // copy from main string to position to temp
+        *ptr_temp++ = *ptr_main_str++; // copy from main string to position to temp
 
-    while (*ptrSubstr)
-        *ptrTemp++ = *ptrSubstr++; // copy from sub string to temp where we left above loop
+    while (*ptr_sub_str)
+        *ptr_temp++ = *ptr_sub_str++; // copy from sub string to temp where we left above loop
 
-    while (*ptrMainStr)
-        *ptrTemp++ = *ptrMainStr++; // copy from remaining main str to temp where we left above loop
+    while (*ptr_main_str)
+        *ptr_temp++ = *ptr_main_str++; // copy from remaining main str to temp where we left above loop
 
-    *ptrTemp = '\0';
-    strcpy(mainStr, temp); // copy string from temp to main string
+    *ptr_temp = '\0';
+    strcpy(main_str, temp); // copy string from temp to main string
 }
 
 int main()
 {
-    char str[100], subStr[100];
-    int ch, i = 0, position;
+    char str[100], sub_str[100];
+    int position;
 
     printf("Enter Your String : ");
-    while ((ch = getchar()) != '\n' && ch != EOF && i < 99)
-        str[i++] = ch;
-    str[i] = '\0';
-
-    i = 0;
-
+    scanf("%[^\n]s", str);
+    getchar();
     printf("Enter Your SubString : ");
-    while ((ch = getchar()) != '\n' && ch != EOF && i < 99)
-        subStr[i++] = ch;
-    subStr[i] = '\0';
+    scanf("%[^\n]s", sub_str);
 
-    printf("Enter the Position to Insert at ( 0 to %lu ) : ",strlen(str) - 1 );
+    printf("Enter the Position to Insert at ( 1 to %lu ) : ",strlen(str)  );
     scanf("%d", &position);
 
     printf("\nOriginal String : %s\n", str);
-
-    insertSubString(str, subStr, position);
-    
+    insertSubString(str, sub_str, position);
     printf("\nAfter Insertion SubString : %s\n", str);
     
     return 0;

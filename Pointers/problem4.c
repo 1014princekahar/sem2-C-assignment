@@ -2,43 +2,56 @@
 
 #include <stdio.h>
 
+void input(int *arr, int row, int col, int n)
+{
+    for (int i = 0; i < row; i++)
+        for (int j = 0; j < col; j++)
+        {
+            printf("Enter array%d[%d][%d] : ", n, i, j);
+            scanf("%d", &arr[i * col + j]);
+        }
+}
+
 void add_two_matrices(int *ptr, int *ptr2, int *ans, int row, int col)
 {
-   for (int i = 0; i < row * col; i++)
-       *(ans + i) = *(ptr + i) + *(ptr2 + i);
+    for (int i = 0; i < row * col; i++)
+        *(ans + i) = *(ptr + i) + *(ptr2 + i);
 }
 
 int main()
 {
-   int i, j, array1[2][2], array2[2][2], add[2][2];
-   for (i = 0; i < 2; i++)
-   {
-       for (j = 0; j < 2; j++)
-       {
-           printf("Enter array1[%d][%d] : ", i, j);
-           scanf("%d", &array1[i][j]);
-       }
-   }
+    while (1)
+    {
+        int i, j, row1, col1, row2, col2;
+        printf("Enter Matrix 1 Row and Column : ");
+        scanf("%d %d", &row1, &col1);
+        printf("Enter Matrix 2 Row and Column : ");
+        scanf("%d %d", &row2, &col2);
 
-   printf("\n");
-   for (i = 0; i < 2; i++)
-   {
-       for (j = 0; j < 2; j++)
-       {
-           printf("Enter array2[%d][%d] : ", i, j);
-           scanf("%d", &array2[i][j]);
-       }
-   }
+        if (row1 == row2 && col1 == col2)
+        {
+            int matrix1[row1][col1], matrix2[row2][col2], add[row1][col1];
+            input(*matrix1, row1, col1, 1);
 
-   add_two_matrices(*array1, *array2, *add, 2, 2);
-   printf("Addition of the given Matrices is \n");
+            printf("\n");
+            input(*matrix2, row2, col2, 2);
 
-   for (i = 0; i < 2; i++)
-   {
-       for (j = 0; j < 2; j++)
-           printf("%d\t", add[i][j]);
-       printf("\n");
-   }
+            add_two_matrices(*matrix1, *matrix2, *add, row1, col1);
+            printf("Addition of the given Matrices is \n");
 
-   return 0;
+            for (i = 0; i < 2; i++)
+            {
+                for (j = 0; j < 2; j++)
+                    printf("%d\t", add[i][j]);
+                printf("\n");
+            }
+        }
+        else
+        {
+            printf("Error! Matrix Order is different \n\n");
+            continue;
+        }
+        break;
+    }
+    return 0;
 }

@@ -24,26 +24,22 @@ void reverses_array(int *arr, int n)
 
 int main()
 {
-    int size, *arr, i;
+    int size, i;
     printf("Enter Array Size : ");
     scanf("%d", &size);
-    
-    arr = (int *)malloc((size + 1) * sizeof(int));
+    int *arr = (int *)malloc((size + 1) * sizeof(int));
 
-    printf("\nEnter Sorted Element \n");
     for (i = 0; i < size; i++)
     {
         printf("Enter %d Element : ", i + 1);
         scanf("%d", &arr[i]);
     }
 
-    reversedArray(arr, size);
-    
+    reverses_array(arr, size);
     for (i = 0; i < size; i++)
         printf("%d\t", arr[i]);
     printf("\n");
 
     free(arr);
-    
     return 0;
 }

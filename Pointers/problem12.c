@@ -4,13 +4,13 @@
 
 int main()
 {
-    int integer = 0, *ptrinteger = &integer;
-    char charater = 'a', *ptrcharacter = &charater;
-    double doubLe = 0.0, *ptrdoubLe = &doubLe;
+    int integer = 0, *ptr_integer = &integer;
+    char charater = 'a', *ptr_character = &charater;
+    double doubLe = 0.0, *ptr_doubLe = &doubLe;
 
-    printf("Int Pointer     :   %p -> After Increment Operations : %p (Difference: %ld bytes)\n", ptrinteger, ptrinteger + 1, (long)(ptrinteger + 1) - (long)ptrinteger);
-    printf("Char Pointer    :   %p -> After Increment Operations : %p (Difference: %ld bytes)\n", ptrcharacter, ptrcharacter + 1, (long)(ptrcharacter + 1) - (long)ptrcharacter);
-    printf("Double Pointer  :   %p -> After Increment Operations : %p (Difference: %ld bytes)\n", ptrdoubLe, ptrdoubLe + 1, (long)(ptrdoubLe + 1) - (long)ptrdoubLe);
+    printf("Int Pointer     :   %p -> After Increment Operations : %p (Difference: %ld bytes)\n", ptr_integer, ptr_integer + 1, (long)(ptr_integer + 1) - (long)ptr_integer);
+    printf("Char Pointer    :   %p -> After Increment Operations : %p (Difference: %ld bytes)\n", ptr_character, ptr_character + 1, (long)(ptr_character + 1) - (long)ptr_character);
+    printf("Double Pointer  :   %p -> After Increment Operations : %p (Difference: %ld bytes)\n", ptr_doubLe, ptr_doubLe + 1, (long)(ptr_doubLe + 1) - (long)ptr_doubLe);
     
     return 0;
 }

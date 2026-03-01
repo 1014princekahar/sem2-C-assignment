@@ -7,11 +7,8 @@ The day name should be kept in a static table of character strings local to the 
 
 void day_name(int n)
 {
-    char *day;
-    char *days[] = {"Invalid Day", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-    day = (n >= 1 && n<=7) ? days[n] : days[0];
-
-    printf("The Day is : %s",day);
+    static char *days[] = {"Invalid Day", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    printf("The Day is : %s\n",(n >= 1 && n<=7) ? days[n] : days[0]);
 }
 
 int main()

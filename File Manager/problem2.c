@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    fp1 = fopen(argv[1], "r");
+    fp1 = fopen(argv[1],"r");
     if (fp1 == NULL)
     {
         printf("\n%s not found. If you wish to create it? (Y/n): ", argv[1]);

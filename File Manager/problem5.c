@@ -10,31 +10,19 @@ int main()
     char ch;
     char f1[50];
 
-    printf("Enter first file name: ");
+    printf("Enter file name: ");
     scanf("%s", f1);
-
-    fp1 = fopen(f1, "w");
-
     getchar();
+
+    fp1 = fopen(f1, "w+");
 
     printf("Enter integer text for %s file (end with ~):\n", f1);
     while ((ch = getchar()) != '~')
-        if (ch >= '0' && ch <= '9' || ch == '~' || ch == ' ') // allow only digits
+        if (ch >= '0' && ch <= '9' || ch == '~' || ch == ' ') // allow only digits , ~ , and space
             fputc(ch, fp1);
 
     getchar();
-
-    fclose(fp1);
-
-    fp1 = fopen(f1, "r");
-
-    if (fp1 == NULL)
-    {
-        printf("File is Not Open\n");
-        return 1;
-    }
-    else
-        printf("File is Opened Successfully in Read Mode\n");
+    rewind(fp1);
 
     while (fscanf(fp1, "%d", &num) != EOF) // Read integer and sum
         sum += num;
@@ -51,9 +39,7 @@ int main()
         printf("File is Opened Successfully in Append Mode\n");
 
     fprintf(fp1, "\nSum = %d", sum); // Add Sum at the end of file
-
     fclose(fp1);
-
     printf("Sum appended successfully\n");
     return 0;
 }

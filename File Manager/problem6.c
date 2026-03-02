@@ -8,37 +8,16 @@ Modify the program so that a specified character is deleted from the source file
 int main()
 {
     FILE *src, *tgt;
-    char source[50], target[50];
     char ch1, ch2;
 
-    printf("Enter source file name: ");
-    scanf("%s", source);
+    src = fopen("source", "w+");
 
-    printf("Enter target file name: ");
-    scanf("%s", target);
-
-    src = fopen(source, "w");
-
-    getchar();
-
-    printf("Enter text for %s file (end with ~):\n", source);
+    printf("Enter text for source file (end with ~ and then enter ):\n");
     while ((ch1 = getchar()) != '~')
         fputc(ch1, src);
 
-    getchar();
-
-    fclose(src);
-
-    src = fopen(source, "r");
-    tgt = fopen(target, "w");
-
-    if (src == NULL || tgt == NULL)
-    {
-        printf("File is Not Open\n");
-        return 1;
-    }
-    else
-        printf("File is Opened Successfully\n");
+    rewind(src);
+    tgt = fopen("target", "w");
 
     printf("Enter character to delete: ");
     scanf(" %c", &ch2); // Read the character to delete

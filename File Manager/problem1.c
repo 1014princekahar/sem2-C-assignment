@@ -26,19 +26,14 @@ int main()
             while (getchar() != '\n');
 
             fp1 = fopen(f1, "w+");
-
             printf("Enter text for %s (end with ~ and then enter) : ", f1);
-
             while ((ch = getchar()) != '~') // Read characters until '~' is encountered
                 fputc(ch, fp1);
 
             rewind(fp1);
         }
         else
-        {
-            fclose(fp1);
             return 1;
-        }
     }
     else
         printf("%s is Opened Successfully\n", f1);

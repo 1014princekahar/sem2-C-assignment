@@ -4,32 +4,29 @@
 
 int main()
 {
-    FILE *fp1, *fp2;
-
-    int num;
-
-    fp1 = fopen("input1.txt", "r");
+    FILE *fp1 = fopen("integer.txt", "r");
     if (fp1 == NULL)
     {
-        printf("Cannot open input file\n");
+        printf("Cannot open integer.txt\n");
         return 1;
     }
-
-    fp2 = fopen("output1.txt", "w");
+    
+    FILE *fp2 = fopen("square.txt", "w");
     if (fp2 == NULL)
     {
-        printf("Cannot open output file\n");
+        printf("Cannot open square.txt\n");
         fclose(fp1);
         return 1;
     }
-
+    
+    int num;
     while (fscanf(fp1, "%d", &num) == 1)
         fprintf(fp2, "%d\n", num * num);
 
     fclose(fp1);
     fclose(fp2);
 
-    printf("Squares written to output file successfully.\n");
+    printf("Successfully Written Squares in square.txt.\n");
     
     return 0;
 }

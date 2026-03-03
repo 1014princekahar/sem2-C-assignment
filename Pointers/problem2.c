@@ -10,24 +10,26 @@ Write a function to calculate the roots. The function must use two pointer param
 #include <stdio.h>
 #include <math.h>
 
-void quadratic_equation(double *coefficients, double *roots)
+float* quadratic_equation(float *coefficients, float *roots)
 {
-   double a = *coefficients, b = *(coefficients + 1), c = *(coefficients + 2);
-   double discriminant = b * b - 4 * a * c;
-   if (discriminant >= 0) {
-       *(roots) = (-b + sqrt(discriminant)) / (2 * a);
-       *(roots + 1) = (-b - sqrt(discriminant)) / (2 * a);
-   }
+    float a = *coefficients, b = *(coefficients + 1), c = *(coefficients + 2);
+    float discriminant = b * b - 4 * a * c;
+    if (discriminant >= 0)
+    {
+        *(roots) = (-b + sqrt(discriminant)) / (2 * a);
+        *(roots + 1) = (-b - sqrt(discriminant)) / (2 * a);
+    }
+    return roots;
 }
 
 int main()
 {
-   double coefficients[3], roots[2];
-   printf("Enter Coefficients of a, b and c : ");
-   scanf("%lf %lf %lf", &coefficients[0], &coefficients[1], &coefficients[2]);
-  
-   quadratic_equation(coefficients, roots);
-   printf("These Quadratic Equation Roots Are %.3f and %.3f",roots[0],roots[1]);
-   printf("\n");
-   return 0;
+    float coefficients[3], roots[2];
+    printf("Enter Coefficients of a, b and c : ");
+    scanf("%f %f %f", &coefficients[0], &coefficients[1], &coefficients[2]);
+
+    quadratic_equation(coefficients, roots);
+    printf("These Quadratic Equation Roots Are %.3f and %.3f", roots[0], roots[1]);
+    printf("\n");
+    return 0;
 }

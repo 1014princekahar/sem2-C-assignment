@@ -8,26 +8,26 @@ int main()
 
     char ch;
 
-    fp1 = fopen("file1.txt", "r");
-    fp2 = fopen("file2.txt", "r");
+    fp1 = fopen("p14_1.txt", "r");
+    fp2 = fopen("p14_2.txt", "r");
     
-    if (fp1 == NULL)
+    if (fp1 == NULL )
     {
-        printf("Cannot open file1.txt\n");
+        printf("Cannot open p14_1.txt\n");
         return 1;
     }
 
     if (fp2 == NULL)
     {
-        printf("Cannot open file2.txt\n");
+        printf("Cannot open p14_2.txt\n");
         fclose(fp1);
         return 1;
     }
 
-    fp3 = fopen("file3.txt", "w");
+    fp3 = fopen("p14_3.txt", "w");
     if (fp3 == NULL)
     {
-        printf("Cannot open file3.txt\n");
+        printf("Cannot open p14_3.txt\n");
         fclose(fp1);
         fclose(fp2);
         return 1;

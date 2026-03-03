@@ -18,6 +18,13 @@ void read_sides(float *a, float *b, float *c)
     scanf("%f", c);
 }
 
+int valid_triangle(float a, float b, float c)
+{
+    if ((a + b > c) && (a + c > b) && (b + c > a))
+        return 1;
+    return 0;
+}
+
 float perimeter(float a, float b, float c)
 {
     return a + b + c;
@@ -35,23 +42,22 @@ int main()
     char operation;
 
     read_sides(&a, &b, &c);
-
+    if(!valid_triangle(a,b,c))
+    {
+        printf("Error! The given sides do not form a valid triangle.\n");
+        return 1;
+    }
     printf("Enter one of the followings: ");
     printf("\n\tA. Perimeter of the triangle ");
     printf("\n\tB. Area of the triangle ");
     printf("\n");
 
     scanf(" %c", &operation);
-    switch (operation)
-    {
-    case 'A':
+    if(operation == 'A' || operation == 'a')
         printf("Result -> %.2f\n", perimeter(a, b, c));
-        break;
-    case 'B':
+    else if(operation == 'B' || operation == 'b')
         printf("Result -> %.2f\n", area(a, b, c));
-        break;
-    default:
+    else
         printf("Invalid operation\n");
-    }
     return 0;
 }

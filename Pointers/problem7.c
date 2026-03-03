@@ -3,6 +3,7 @@ Write a program to read in an array of names and to sort them in alphabetical or
 Use sort function that receives pointers to the function strcmp and swap.sort in turn should call these functions via the pointers.
 */
 
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

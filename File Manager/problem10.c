@@ -10,44 +10,44 @@ struct product
     int product_code;
     float cost;
     int quantity;
-}p;
+} p;
 
 int main()
 {
     FILE *fp;
-    
-    int i, search_code, found = 0;
+
+    int i, n, search_code, found = 0;
 
     fp = fopen("product.dat", "wb+");
-
     if (fp == NULL)
     {
         printf("File not opened\n");
         return 1;
     }
 
-                /* Product Details */
+    /* Product Details */
 
-    for (i = 0; i < 5; i++)
+    printf("How many Product Details You have to Enter : ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
     {
         printf("\nEnter product code: ");
         scanf("%d", &p.product_code);
-
         printf("Enter cost: ");
         scanf("%f", &p.cost);
-
         printf("Enter quantity: ");
         scanf("%d", &p.quantity);
 
         fwrite(&p, sizeof(p), 1, fp);
     }
 
-                /* Alternate product details */
+    /* Alternate product details */
 
     printf("\nAlternate product details:\n");
     rewind(fp);
 
-    for (i = 0; i < 5; i += 2)
+    for (i = 0; i < n; i += 2)
     {
         fseek(fp, i * sizeof(p), SEEK_SET);
         fread(&p, sizeof(p), 1, fp);
@@ -55,7 +55,7 @@ int main()
         printf("Code: %d  Cost: %.2f  Quantity: %d\n", p.product_code, p.cost, p.quantity);
     }
 
-                /* search by product code */
+    /* search by product code */
 
     printf("\nEnter product code to search: ");
     scanf("%d", &search_code);
@@ -77,7 +77,6 @@ int main()
 
     if (!found)
         printf("\nProduct not found\n");
-
     fclose(fp);
 
     return 0;

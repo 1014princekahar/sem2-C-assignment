@@ -15,7 +15,7 @@ int main()
     
     int i, n;
 
-    fp = fopen("student.txt", "w");
+    fp = fopen("records.txt", "w");
 
     if (fp == NULL)
     {
@@ -34,10 +34,9 @@ int main()
 
         printf("Roll number: ");
         scanf("%d", &s.roll);
-
+        getchar();
         printf("Name: ");
-        scanf("%s", s.name);
-
+        scanf("%[^\n]s", s.name);
         printf("Marks: ");
         scanf("%f", &s.marks);
 
@@ -45,8 +44,6 @@ int main()
     }
 
     fclose(fp);
-
     printf("\nRecords stored successfully in file.\n");
-
     return 0;
 }

@@ -18,8 +18,8 @@ int main()
     struct product p;
     float total = 0;
     char str[1000];
-    fp = fopen("product", "r");
 
+    fp = fopen("product", "r");
     if (fp == NULL)
     {
         printf("File is Not Open\n");
@@ -29,12 +29,10 @@ int main()
         printf("File is Opened Successfully\n");
 
     fgets(str, sizeof(str), fp); // Skip header line
-    
     while (fscanf(fp, "%d %f %d", &p.pcode, &p.cost, &p.quantity) != EOF)
         total += (p.cost * p.quantity);
 
     fclose(fp);
-
     printf("Total value of all five products = %.2f\n", total);
 
     return 0;

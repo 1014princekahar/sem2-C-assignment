@@ -16,7 +16,7 @@ int main()
 {
     FILE *fp;
     
-    int i;
+    int i,n;
 
     fp = fopen("product", "w");
 
@@ -30,16 +30,17 @@ int main()
 
     fprintf(fp, "Code\t\t\tCost\t\t\tQuantity\n");
 
-    for (i = 1; i <= 5; i++)
+    printf("How many Product Details You have to Enter : ");
+    scanf("%d",&n);
+
+    for (i = 1; i <= n; i++)
     {
         printf("\nEnter details of product %d\n", i);
 
         printf("Product code: ");
         scanf("%d", &p.code);
-
         printf("Cost: ");
         scanf("%f", &p.cost);
-
         printf("Number of items available: ");
         scanf("%d", &p.quantity);
 
